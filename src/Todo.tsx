@@ -18,7 +18,9 @@ export default class Todo extends Component <{}, State> {
     };
 
     addTodo({ value }:HTMLInputElement) {
-        this.setState(prevState => ({todos: [...prevState.todos, value]}));
+        if (value.trim()) {
+            this.setState(prevState => ({todos: [...prevState.todos, value]}));
+        }
     }
 
     render() {
