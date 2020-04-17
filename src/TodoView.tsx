@@ -1,10 +1,12 @@
 import React from 'react'
 
 interface Props {
-    todos: string[]
+    todos: string[],
+    handleReset: Function
 }
 
-const TodoView: React.FC <Props> = ({ todos }) => {
+const TodoView: React.FC <Props> = ({ todos, handleReset }) => {
+    let extraControls = null;
     const todosList: Array<any> = todos.map((todo, index) => (
         <li key={index}>
             <label>
@@ -13,13 +15,26 @@ const TodoView: React.FC <Props> = ({ todos }) => {
             </label>
         </li>
     ));
+
+    if (todosList.length) {
+        extraControls = (
+            <div id="exraInfoContainer">
+                <span>count {todosList.length}</span>
+                <span className="extra-info-span-btn">show completed</span>
+                <span className="extra-info-span-btn" onClick={() => handleReset()}>clear</span>
+            </div>
+        );
+    }
     
     return (
-        <div id="todoViewContainer">
-            <ul>
-                {todosList}
-            </ul>
-        </div>
+        <>
+            <div id="todoViewContainer">
+                <ul>
+                    {todosList}
+                </ul>
+            </div>
+            {extraControls}
+        </>
     )
 }
 
