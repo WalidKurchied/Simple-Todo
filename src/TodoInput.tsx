@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 
 interface Props {
     addTodo: Function,
@@ -7,6 +7,12 @@ interface Props {
 
 const TodoInput: React.FC <Props> = ({ addTodo, onKeyDown }) => {
     const todoTextInput = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        if (todoTextInput.current !== null) {
+            todoTextInput.current.focus();
+        }
+    }, []);
 
     return (
         <div id="todoInputContainer">

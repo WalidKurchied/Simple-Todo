@@ -97,10 +97,6 @@ li:last-child {
     padding-bottom: 0;
 }
 
-label {
-
-}
-
 label input[type="checkbox"] {
     width: 18px;
     height: 18px;
