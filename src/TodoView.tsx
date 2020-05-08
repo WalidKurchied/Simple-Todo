@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
 interface Props {
-    todos: any[], //TODO: need to fix the type here too
+    todos: { content: string, isComplete: boolean } []
     handleReset: Function,
     setAsComplete: Function
 }
 
 interface State {
-    toggleCompletedTodos: boolean
+    toggleCompletedTodos: boolean //TODO need to figure out how to type state
 }
 
 const TodoView: React.FC<Props> = ({ todos, handleReset, setAsComplete }) => {

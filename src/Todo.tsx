@@ -5,7 +5,7 @@ import TodoView from './TodoView';
 import './todo.css';
 
 interface State {
-    todos: any[] //TODO: need to fix this type
+    todos: { content: string, isComplete: boolean } []
 }
 
 export default class Todo extends Component<{}, State> {
