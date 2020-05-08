@@ -8,3 +8,6 @@ Something's I could have done differently:
 TODO: 
 - Fix some typings 
 - Clear the text of input when todo is created
+
+
+<img width="1676" alt="screenshot" src="https://user-images.githubusercontent.com/7544317/80911521-bdc46c00-8d2e-11ea-9e1e-81131e5dc163.png">
