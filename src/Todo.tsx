@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import TodoInput from './TodoInput';
 import TodoView from './TodoView';
 
@@ -34,7 +34,7 @@ export default class Todo extends Component<{}, State> {
         }
     }
     
-    setAsComplete(e: any, id: number) {
+    setAsComplete(e: React.ChangeEvent<HTMLInputElement>, id: number) {
         const isComplete = e.target.checked;
 
         setTimeout(() => {

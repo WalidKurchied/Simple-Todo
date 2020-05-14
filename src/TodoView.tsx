@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
 
 interface Props {
     todos: { content: string, isComplete: boolean } []
@@ -6,14 +7,9 @@ interface Props {
     setAsComplete: Function
 }
 
-interface State {
-    toggleCompletedTodos: boolean //TODO need to figure out how to type state
-}
-
 const TodoView: React.FC<Props> = ({ todos, handleReset, setAsComplete }) => {
     let extraControls = null;
-    const [toggleCompletedTodos, setToggleCompletedTodos] = useState(false);
-    
+    const [toggleCompletedTodos, setToggleCompletedTodos] = useState<boolean>(false);
 
     const todosList: Array<any> = todos.map(({ content, isComplete }, index) => {
         if (toggleCompletedTodos || !isComplete) {
