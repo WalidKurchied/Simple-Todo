@@ -3,6 +3,7 @@
     letter-spacing: 3px;
     font-size: xx-large;
     text-shadow: 0 0 .5px black;
+    text-align: center;
 }
 
 #todo {

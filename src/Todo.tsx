@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TodoInput from './TodoInput';
 import TodoView from './TodoView';
 
-import './todo.css';
+import './styles/todo.css';
 
 interface State {
     todos: { content: string, isComplete: boolean } []
@@ -40,7 +40,7 @@ export default class Todo extends Component<{}, State> {
         setTimeout(() => {
             this.setState(({ todos }) => ({
                     todos: todos.map((todo, index) => {
-                        if(index === id) {
+                        if (index === id) {
                             return {...todo, isComplete};
                         }
                         
