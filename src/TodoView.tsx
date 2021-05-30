@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-
+import { HandleReset, SetAsComplete, Todos } from './Todo';
 
 interface Props {
-    todos: { content: string, isComplete: boolean } []
-    handleReset: Function,
-    setAsComplete: Function
+    todos: Array<Todos>,
+    handleReset: HandleReset,
+    setAsComplete: SetAsComplete
 }
 
 const TodoView: React.FC<Props> = ({ todos, handleReset, setAsComplete }) => {
     let extraControls = null;
     const [toggleCompletedTodos, setToggleCompletedTodos] = useState<boolean>(false);
 
-    const todosList: Array<any> = todos.map(({ content, isComplete }, index) => {
+    const todosList = todos.map(({ content, isComplete }, index) => {
         if (toggleCompletedTodos || !isComplete) {
             return (
                 <li key={index}>
@@ -22,6 +22,8 @@ const TodoView: React.FC<Props> = ({ todos, handleReset, setAsComplete }) => {
                 </li>
             );
         }
+
+        return null;
     });
 
     if (todosList.length) {

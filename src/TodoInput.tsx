@@ -1,8 +1,9 @@
 import React, { useRef, useEffect } from 'react';
+import { AddToDo, HandleKeyDown } from './Todo';
 
 interface Props {
-    addTodo: Function,
-    onKeyDown: Function
+    addTodo: AddToDo,
+    onKeyDown: HandleKeyDown
 }
 
 const TodoInput: React.FC <Props> = ({ addTodo, onKeyDown }) => {
@@ -17,7 +18,7 @@ const TodoInput: React.FC <Props> = ({ addTodo, onKeyDown }) => {
     return (
         <div id="todoInputContainer">
             <input type="text" ref={todoTextInput} onKeyDown={e => onKeyDown(e)} />
-            <input type="button" value="Add Todo" onClick={() => addTodo(todoTextInput.current)} />
+            <input type="button" value="Add Todo" onClick={() => addTodo(todoTextInput.current!)} />
         </div>
     )
 }
